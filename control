@@ -1,0 +1,62 @@
+Package: com.wh1tew1n.animephone
+Name: AnimePhone
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Maintainer: wh1tew1n <https://github.com/wh1tew1n>
+Author: wh1tew1n
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Description: 🌸 AnimePhone - Transform Your Phone App Into Anime Masterpiece! 🌸
+
+✨ CORE FEATURES:
+• Stunning Anime-Style UI transformations for the Phone application
+• Beautiful cherry blossom-inspired color schemes and gradients
+• Customizable anime themes with enchanting visual effects
+• Smooth animations and elegant transitions
+• 3 pre-designed themes: Sakura 🌸, Night Sky 🌙, Summer 🌊
+
+🎨 ANIME DESIGN ELEMENTS:
+• Gradient backgrounds with soft, romantic aesthetics
+• Custom corner radius for anime-friendly rounded design
+• Shadow effects for modern 3D appearance
+• Smooth entrance animations for every screen
+• Professional UI enhancements throughout the app
+
+⚙️ ADVANCED CUSTOMIZATION:
+• Toggle anime effects on/off instantly
+• Animation speed control (0.5x to 2.0x)
+• Enable/disable specific effects independently
+• Real-time preference updates without respring
+• Custom color adjustment capabilities
+
+🌍 MULTILINGUAL SUPPORT:
+• Full English localization 🇬🇧
+• Complete Russian translation 🇷🇺
+• Easy language switching in preferences
+• Automatic device language detection
+• All interface elements translated
+
+🎯 PREFERENCE LOADER:
+• Beautiful anime-styled settings interface
+• Gradient-themed header with custom design
+• Intuitive switches and sliders for all options
+• Real-time preview of changes
+• Easy theme selection with emoji indicators
+• Professional preference organization
+
+📱 COMPATIBILITY:
+• iOS 14.0 and later
+• All iPhone models (arm64/arm64e)
+• Works with modern jailbreak tools
+• Compatible with other tweaks
+• Optimized performance and battery usage
+
+👨‍💻 DEVELOPER:
+• Developed by wh1tew1n
+• Built with Theos framework
+• Open source on GitHub
+• Community support and updates
+
+💖 CREATED WITH LOVE for anime enthusiasts and iOS customization lovers!
+
+Visit: https://github.com/wh1tew1n/theos-jailbreak-tweak
