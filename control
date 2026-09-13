@@ -1,19 +1,28 @@
 Package: com.wh1tew1n.animephone
-Name: AnimePhone
+Name: 🌸 AnimePhone - Sakura Edition 🌸
 Version: 1.0.0
 Architecture: iphoneos-arm64
 Maintainer: wh1tew1n <https://github.com/wh1tew1n>
 Author: wh1tew1n
 Section: Tweaks
 Depends: mobilesubstrate, preferenceloader
-Description: 🌸 AnimePhone - Transform Your Phone App Into Anime Masterpiece! 🌸
+Description: 🌸 AnimePhone Sakura Edition - Transform Your Phone App Into Anime Masterpiece! 🌸
 
 ✨ CORE FEATURES:
 • Stunning Anime-Style UI transformations for the Phone application
-• Beautiful cherry blossom-inspired color schemes and gradients
+• Beautiful falling sakura petal animations
+• Cherry blossom-inspired color schemes and gradients
 • Customizable anime themes with enchanting visual effects
 • Smooth animations and elegant transitions
 • 3 pre-designed themes: Sakura 🌸, Night Sky 🌙, Summer 🌊
+
+🎨 SAKURA ANIMATION FEATURES:
+• Falling cherry blossom petals throughout the interface
+• Smooth petal animations with physics-based movement
+• Sakura glow effects on interactive elements
+• Pulsing animations on button presses
+• Sakura-themed tab bar with gradient effects
+• Scale animations for scene transitions
 
 🎨 ANIME DESIGN ELEMENTS:
 • Gradient backgrounds with soft, romantic aesthetics
