@@ -15,12 +15,19 @@
 ### 🎨 Stunning Visual Transformations
 - **Anime-Styled Interface**: Beautiful gradient backgrounds with cherry blossom-inspired color schemes
 - **Multiple Themes**: 
-  - 🌸 **Sakura** - Soft pink cherry blossom aesthetic
+  - 🌸 **Sakura** - Soft pink cherry blossom aesthetic with falling petals
   - 🌙 **Night Sky** - Mystical deep space purple theme
   - 🌊 **Summer** - Refreshing ocean blue vibes
 - **Smooth Animations**: Elegant entrance effects and transitions
 - **Custom Shadows & Depth**: Professional 3D effects for modern UI
 - **Rounded Design**: Soft, anime-friendly corner radius throughout
+
+### 🌸 Sakura Petal Animations
+- **Falling Petals**: Beautiful cherry blossom petals falling through the interface
+- **Physics-Based Movement**: Realistic petal animation with velocity variation
+- **Glow Effects**: Sakura glow on interactive elements
+- **Button Press Animations**: Pulsing effects when tapping buttons
+- **Tab Bar Effects**: Sakura-themed gradient on the Phone app tab bar
 
 ### ⚙️ Advanced Customization
 - **Toggle On/Off**: Enable or disable anime style at any time
@@ -34,7 +41,7 @@
 - Switch languages directly from preferences
 
 ### 🎪 Preference Loader Integration
-- **Anime-Styled Settings**: Preferences app features anime-themed UI
+- **Anime-Styled Settings**: Preferences app features anime-themed UI with gradient header
 - **Beautiful Header**: Gradient anime-styled header with custom fonts
 - **Intuitive Controls**: Smooth switches, sliders, and segments
 - **Real-time Preview**: See changes applied instantly to your device
@@ -46,6 +53,7 @@
 - **iOS Version**: 14.0 or later (tested up to iOS 17)
 - **Processor**: ARM64 / ARM64e (iPhone 6s and later)
 - **Jailbreak**: Compatible with Checkra1n, Palera1n, and other modern jailbreaks
+- **Rootless Support**: Palera1n rootless compatible
 - **Dependencies**:
   - MobileSubstrate
   - PreferenceLoader
@@ -78,6 +86,28 @@ make install
 make install RESPRING=1
 ```
 
+### Building for Rootless (Palera1n):
+```bash
+# Set up THEOS for rootless
+export THEOS=~/theos
+export THEOS_DEVICE_IP=192.168.1.100  # Change to your device IP
+export THEOS_DEVICE_PORT=22
+
+# Clone repository
+git clone https://github.com/wh1tew1n/theos-jailbreak-tweak.git
+cd theos-jailbreak-tweak
+
+# Build for rootless
+make clean
+make package FINALPACKAGE=1
+
+# Install to rootless device
+make install INSTALL_TARGET_PROCESSES=Phone
+
+# Respring (rootless safe)
+make install RESPRING=1
+```
+
 ---
 
 ## 🎯 Usage Guide
@@ -87,7 +117,7 @@ make install RESPRING=1
 2. **Navigate to AnimePhone** preferences
 3. **Enable Anime Style** toggle
 4. **Select Your Favorite Theme**:
-   - 🌸 Sakura (recommended for beginners)
+   - 🌸 Sakura (recommended - features falling petal animations)
    - 🌙 Night Sky (perfect for night mode users)
    - 🌊 Summer (great for bright environments)
 5. **Configure Animation Speed** using the slider
@@ -99,6 +129,7 @@ make install RESPRING=1
 - **Color Too Bold?** Try the Night Sky theme for softer colors
 - **Want More Speed?** Increase animation speed to 2.0x
 - **Language Support**: Switch between English and Russian instantly
+- **Rootless Users**: Make sure device IP is correctly set in environment
 
 ---
 
@@ -109,21 +140,29 @@ make install RESPRING=1
 - **Hooking Framework**: Logos
 - **Preference Storage**: Darwin Notifications + NSUserDefaults
 - **UI Framework**: UIKit
+- **Animation Engine**: Core Animation with CAEmitterLayer
 
 ### Hooked Components
-- `UIViewController` - Main view styling and animations
-- `UIButton` - Button anime-styling with borders and shadows
+- `UIViewController` - Main view styling and animations with sakura effects
+- `UIButton` - Button anime-styling with borders, shadows, and pulse animations
 - `UITableViewCell` - Table cell anime transformations
+- `UITabBar` - Tab bar customization with sakura glow effects
 - Navigation Bar - Custom gradient and colors
 
 ### Code Structure
 ```
 AnimePhone/
-├── Makefile              # Build configuration
-├── Tweak.xm              # Main tweak implementation
+├── Makefile              # Build configuration (THEOS compatible)
+├── Tweak.xm              # Main tweak implementation with sakura animations
 ├── control               # Package metadata
 ├── README.md             # This file
-└── LICENSE               # MIT License
+├── LICENSE               # MIT License
+└── animephone-prefs/     # Preference Loader bundle
+    ├── Resources/
+    │   ├── Root.plist    # Preferences structure
+    │   ├── en.lproj/     # English localization
+    │   └── ru.lproj/     # Russian localization
+    └── entry.plist       # Entry point
 ```
 
 ---
@@ -134,7 +173,8 @@ AnimePhone/
 ```
 Primary Color: RGB(255, 191, 224) - Cherry Blossom Pink
 Accent: Soft gradients to white
-Best for: Daytime, normal brightness
+Animation: Falling sakura petals with physics
+Best for: Daytime, normal brightness, anime lovers
 ```
 
 ### Night Sky Theme 🌙
@@ -156,6 +196,8 @@ Best for: Bright environments, summer vibes
 ## 🔧 Development
 
 ### Building from Source
+
+#### Standard Build:
 ```bash
 # Install THEOS
 export THEOS=~/theos
@@ -165,10 +207,32 @@ git clone https://github.com/wh1tew1n/theos-jailbreak-tweak.git
 cd theos-jailbreak-tweak
 
 # Build package
+make clean
 make package
 
 # Install to connected device
 make install
+```
+
+#### Rootless Build (Palera1n):
+```bash
+# Setup environment
+export THEOS=~/theos
+export THEOS_DEVICE_IP=YOUR_DEVICE_IP
+export THEOS_DEVICE_PORT=22
+
+# Navigate to project
+cd ~/theos-jailbreak-tweak
+
+# Clean and build
+make clean
+make package FINALPACKAGE=1
+
+# Install to rootless jailbreak
+make install INSTALL_TARGET_PROCESSES=Phone
+
+# Apply changes without full respring
+make install RESPRING=1
 ```
 
 ### Adding New Themes
@@ -179,11 +243,13 @@ static UIColor* getMyThemeColor() {
 }
 ```
 2. Update preferences with new theme option
-3. Rebuild and test
+3. Add sakura animation support if desired
+4. Rebuild and test
 
 ### Contributing Translations
 1. Fork the repository
-2. Add translations to preference files
+2. Add translations to:
+   - `animephone-prefs/Resources/[language].lproj/Root.strings`
 3. Submit a pull request
 
 ---
@@ -193,10 +259,12 @@ static UIColor* getMyThemeColor() {
 ### Tweak Not Appearing in Settings
 - **Solution**: Respring device or use `killall -9 Preferences`
 - **Check**: Verify PreferenceLoader is installed
+- **Rootless**: Ensure device is properly jailbroken with Palera1n
 
 ### Animations Are Slow
 - **Solution**: Reduce animation speed in preferences
 - **Check**: Ensure device has enough free RAM
+- **Rootless**: Check if running other heavy tweaks
 
 ### Colors Look Different
 - **Solution**: Adjust display settings on iPhone
@@ -205,6 +273,11 @@ static UIColor* getMyThemeColor() {
 ### Changes Not Applying
 - **Solution**: Respring or fully restart the Phone app
 - **Check**: Ensure "Enable Anime Style" toggle is ON
+
+### Rootless Installation Issues
+- **Solution**: Verify correct device IP: `settings -> About -> IP Address`
+- **Check**: SSH connection works: `ssh mobile@YOUR_DEVICE_IP`
+- **Solution**: Update THEOS to latest version: `cd ~/theos && git pull`
 
 ---
 
@@ -243,6 +316,7 @@ copies or substantial portions of the Software.
 - **Anime Lovers Everywhere** - For inspiring this beautiful project
 - **MobileSubstrate** - For runtime code injection capabilities
 - **PreferenceLoader** - For easy preferences integration
+- **Palera1n Team** - For rootless jailbreak support
 
 ---
 
@@ -250,25 +324,31 @@ copies or substantial portions of the Software.
 
 ### Version 1.0 (Current) ✅
 - ✅ Core anime styling system
+- ✅ Sakura petal animations
 - ✅ Three beautiful themes
 - ✅ Animation controls
 - ✅ Bilingual support (EN/RU)
 - ✅ Anime-styled preferences
+- ✅ Rootless support
 
 ### Version 1.1 (Planned) 🔄
 - 🔄 Additional themes (Cyberpunk, Magical Girl, etc.)
 - 🔄 Custom color picker
 - 🔄 Sound effects integration
 - 🔄 Character/Avatar customization
+- 🔄 More sakura animation variations
 
 ### Version 2.0 (Future) 🎯
 - 🎯 App-wide anime theming
-- 🎯 Particle effects
+- 🎯 Advanced particle effects
 - 🎯 Custom fonts
 - 🎯 More languages (日本語, 中文, etc.)
+- 🎯 Dynamic theme creation
 
 ---
 
-**AnimePhone** - Because your Phone app deserves to be as beautiful as anime! 🌸✨
+**AnimePhone - Sakura Edition** - Because your Phone app deserves to be as beautiful as anime! 🌸✨
 
 *Made with 💖 for jailbreak enthusiasts and anime fans*
+
+*Now with full rootless support! 🚀*
