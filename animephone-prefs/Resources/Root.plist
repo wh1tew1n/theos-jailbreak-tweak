@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>items</key>
+    <array>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>AnimePhone Settings</string>
+            <key>footerText</key>
+            <string>✨ Transform your Phone app into anime style! ✨</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>defaults</key>
+            <string>com.wh1tew1n.animephone.prefs</string>
+            <key>key</key>
+            <string>animeEnabled</string>
+            <key>label</key>
+            <string>Enable AnimePhone</string>
+            <key>default</key>
+            <true/>
+            <key>PostNotification</key>
+            <string>com.wh1tew1n.animephone.prefs/ReloadPrefs</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>🎨 Theme Selection</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSegmentCell</string>
+            <key>defaults</key>
+            <string>com.wh1tew1n.animephone.prefs</string>
+            <key>key</key>
+            <string>selectedTheme</string>
+            <key>default</key>
+            <string>sakura</string>
+            <key>label</key>
+            <string>Anime Theme</string>
+            <key>validValues</key>
+            <array>
+                <string>sakura</string>
+                <string>nightsky</string>
+                <string>summer</string>
+            </array>
+            <key>validTitles</key>
+            <array>
+                <string>🌸 Sakura</string>
+                <string>🌙 Night Sky</string>
+                <string>🌊 Summer</string>
+            </array>
+            <key>PostNotification</key>
+            <string>com.wh1tew1n.animephone.prefs/ReloadPrefs</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>⚙️ Animation Settings</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>defaults</key>
+            <string>com.wh1tew1n.animephone.prefs</string>
+            <key>key</key>
+            <string>animationsEnabled</string>
+            <key>label</key>
+            <string>Enable Animations</string>
+            <key>default</key>
+            <true/>
+            <key>PostNotification</key>
+            <string>com.wh1tew1n.animephone.prefs/ReloadPrefs</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSliderCell</string>
+            <key>defaults</key>
+            <string>com.wh1tew1n.animephone.prefs</string>
+            <key>key</key>
+            <string>animationSpeed</string>
+            <key>default</key>
+            <real>1.0</real>
+            <key>min</key>
+            <real>0.5</real>
+            <key>max</key>
+            <real>2.0</real>
+            <key>label</key>
+            <string>Animation Speed</string>
+            <key>PostNotification</key>
+            <string>com.wh1tew1n.animephone.prefs/ReloadPrefs</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>🌍 Language / Язык</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSegmentCell</string>
+            <key>defaults</key>
+            <string>com.wh1tew1n.animephone.prefs</string>
+            <key>key</key>
+            <string>appLanguage</string>
+            <key>default</key>
+            <string>en</string>
+            <key>label</key>
+            <string>Select Language</string>
+            <key>validValues</key>
+            <array>
+                <string>en</string>
+                <string>ru</string>
+            </array>
+            <key>validTitles</key>
+            <array>
+                <string>🇬🇧 English</string>
+                <string>🇷🇺 Русский</string>
+            </array>
+            <key>PostNotification</key>
+            <string>com.wh1tew1n.animephone.prefs/ReloadPrefs</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>ℹ️ About AnimePhone</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSStaticTextCell</string>
+            <key>label</key>
+            <string>AnimePhone v1.0.0</string>
+            <key>alignment</key>
+            <integer>1</integer>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSStaticTextCell</string>
+            <key>label</key>
+            <string>Created with 💖 by wh1tew1n</string>
+            <key>alignment</key>
+            <integer>1</integer>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSStaticTextCell</string>
+            <key>label</key>
+            <string>GitHub: wh1tew1n/theos-jailbreak-tweak</string>
+            <key>alignment</key>
+            <integer>1</integer>
+        </dict>
+    </array>
+    <key>title</key>
+    <string>AnimePhone</string>
+</dict>
+</plist>

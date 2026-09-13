@@ -1,0 +1,9 @@
+Package: com.wh1tew1n.animephone.prefs
+Name: AnimePhone Preferences
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Maintainer: wh1tew1n <https://github.com/wh1tew1n>
+Author: wh1tew1n
+Depends: mobilesubstrate, preferenceloader
+Section: System
+Description: AnimePhone Preference Loader Bundle
